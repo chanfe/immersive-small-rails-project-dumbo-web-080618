@@ -1,0 +1,20 @@
+<%= form_for @card do |f| %>
+  <%= f.label "Name"%>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %><br>
+  <%= f.text_area :description %><br>
+
+  <%= f.label :mana_cost %>
+  <%= f.number_field :mana_cost%><br>
+
+  <%= f.label :theme_set_id, "Theme Set" %>
+  <%= f.collection_select(:theme_set_id, ThemeSet.all, :id, :name, include_blank: true) %><br>
+  
+  <% if @card.deck %>
+    <%= f.label "Deck" %>
+    <%= f.collection_select(:card, @decks, :id, :name, include_blank: true) %><br>
+  <% end %>
+
+  <%= f.submit "Submit" %>
+<% end %>

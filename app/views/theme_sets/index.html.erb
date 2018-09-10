@@ -1,0 +1,6 @@
+<h1>Theme Sets</h1>
+<div>
+  <% @theme_sets.each do |theme_set| %>
+     <h3><%= link_to theme_set.name, theme_set_path(theme_set) %></h3>
+  <% end %>
+</div>

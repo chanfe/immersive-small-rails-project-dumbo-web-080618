@@ -1,0 +1,8 @@
+<h1>Cards Index</h1><br>
+<div>
+  
+  <% @cards.each do |card| %>
+    <h3><%= link_to card.name , card_path(card) %></h3>
+  <% end %>
+  
+</div>

@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+theme1 = ThemeSet.create(name: "Fire and Ice", category: "Red and White")
+theme2 = ThemeSet.create(name: "Pyre Mountain", category: "Volcanic Ash")
