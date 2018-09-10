@@ -4,5 +4,7 @@
   <br>
   <%= f.collection_select :user_id, User.all, :id, :username %>
   <br>
+
+  <%= f.collection_check_boxes :card_ids, Card.all, :id, :name %>
  <%= f.submit %>
 <% end %>

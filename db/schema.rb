@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_175649) do
+ActiveRecord::Schema.define(version: 2018_09_10_225010) do
+
+  create_table "card_decks", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "deck_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.integer "mana_cost"
     t.integer "theme_set_id"
-    t.integer "deck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,14 +44,10 @@ ActiveRecord::Schema.define(version: 2018_09_10_175649) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-<<<<<<< HEAD
-    t.string "password_digest"
-=======
     t.string "first_name"
     t.string "last_name"
     t.string "password_digest"
     t.string "email"
->>>>>>> 2ceb720e69f7429a307885df108337c7ac86c4ba
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

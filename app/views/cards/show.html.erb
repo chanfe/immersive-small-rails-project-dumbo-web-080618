@@ -1,9 +1,8 @@
 <h2>Name: <%= @card.name %></h2>
 <h2>Mana Cost: <%= @card.mana_cost %></h2>
-<h2>From the <%= @card.theme %> Theme-Set</h2>
-<% if @card.deck %> 
-  <h2>Part of <%= @card.deck %> Deck</h2>
-<% end %>
+<h2>From the <%= link_to @card.theme_set.name, @card.theme_set %> Theme-Set</h2>
 <h2>Description: </h2><br>
 <p><%= @card.description %></p>
-<h2>Name: <%= @card. %></h2>
+<h2>Name: <%= @card.name %></h2>
+<%= link_to "Edit", edit_card_path %>
+<%= button_to "Delete", card_path ,method: :delete %>

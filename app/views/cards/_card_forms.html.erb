@@ -10,11 +10,6 @@
 
   <%= f.label :theme_set_id, "Theme Set" %>
   <%= f.collection_select(:theme_set_id, ThemeSet.all, :id, :name, include_blank: true) %><br>
-  
-  <% if @card.deck %>
-    <%= f.label "Deck" %>
-    <%= f.collection_select(:card, @decks, :id, :name, include_blank: true) %><br>
-  <% end %>
 
   <%= f.submit "Submit" %>
 <% end %>

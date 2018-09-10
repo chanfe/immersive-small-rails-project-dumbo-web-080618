@@ -5,7 +5,6 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :description
       t.integer :mana_cost
       t.integer :theme_set_id
-      t.integer :deck_id, default: nil, null: true
 
       t.timestamps
     end
