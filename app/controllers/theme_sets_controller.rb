@@ -1,0 +1,3 @@
+class ThemeSetsController < ApplicationController
+
+end
