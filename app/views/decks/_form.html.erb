@@ -1,0 +1,8 @@
+<%= form_for @deck do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.collection_select :user_id, User.all, :id, :username %>
+  <br>
+ <%= f.submit %>
+<% end %>

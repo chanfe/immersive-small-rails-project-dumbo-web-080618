@@ -1,0 +1,15 @@
+<h1>Deck Info</h1>
+<%= @deck.name %>
+<br>
+<%= link_to 'edit', edit_deck_path%>
+<%= button_to 'delete', deck_path, method: :delete %>
+
+
+<h2>Deck cards:</h2>
+<% @deck.cards.each do |card| %>
+<ul>
+
+  <li> <%= link_to card.name, card %> </li>
+
+</ul>
+<% end %>

@@ -4,7 +4,7 @@ class CreateDecks < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :user_id
 
-      t.timestamps
+      t.timestamps 
     end
   end
 end

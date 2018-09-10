@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
     # GET /login
     render :new
-  end
+  end 
 
   def create
     #POST /sessions
