@@ -6,10 +6,11 @@
 
 
 <h2>Deck cards:</h2>
+
 <% @deck.cards.each do |card| %>
 <ul>
-
-  <li> <%= link_to card.name, card %> </li>
-
+  <% if @deck.card_decks.find_copies(card.id, @deck.id) > 0 %>
+    <li> <%= link_to card.name, card %> <%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</li>
+  <% end %>
 </ul>
 <% end %>

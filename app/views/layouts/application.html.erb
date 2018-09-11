@@ -4,12 +4,18 @@
     <title>Tcg</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-  
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= button_to "Logout", "/logout", method: :delete  %>
+      <p>Welcome back!</p>
+    <% else %>
+      <%= link_to "Log in!", login_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

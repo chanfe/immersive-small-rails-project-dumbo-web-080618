@@ -1,14 +1,20 @@
 <%= form_for @deck do |f| %>
+  <%= f.label :user_id %>
+  <% if logged_in? %>
+    <%= f.collection_select :user_id, [@currect_user], :id, :username%>
+  <% else %>
+    <%= f.collection_select :user_id, User.all, :id, :username %>
+  <% end %>
+  <br>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <br>
-  <%= f.collection_select :user_id, User.all, :id, :username %>
   <br>
 
   <!-- <% f.collection_check_boxes :card_ids, Card.all, :id, :name %> -->
   <% Card.all.each do |card| %>
     <%= label_tag "#{card.name}" %>
-    <%= number_field_tag "card_ids[#{card.id}]", nil, in: 0..10 %>
+    <%= number_field_tag "card_ids[#{card.id}]", card.card_decks.find_copies(card.id, @deck.id), in: 0..10 %>
     <br>
   <% end %>
  <%= f.submit %>
