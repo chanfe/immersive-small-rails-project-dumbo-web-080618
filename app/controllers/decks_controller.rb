@@ -18,9 +18,7 @@ class DecksController < ApplicationController
   def create
     @deck = Deck.new(strong_params)
     if @deck.save
-      for temp in 0...params[:deck][:card_ids].size do
-        CardDeck.create(card_id: params[:deck][:card_ids][temp], deck_id: @deck.id )
-      end
+      create_cards
       redirect_to @deck
     else
       render :new
@@ -35,9 +33,7 @@ class DecksController < ApplicationController
     @deck = Deck.find(params[:id])
     if @deck.update(strong_params)
       CardDeck.all.select{|e| e.deck_id == @deck.id}.each{|e| e.destroy}
-      for temp in 0...params[:deck][:card_ids].size do
-        CardDeck.create(card_id: params[:deck][:card_ids][temp], deck_id: @deck.id )
-      end
+      create_cards
       redirect_to @deck
     else
       render :edit
@@ -54,6 +50,12 @@ class DecksController < ApplicationController
 
   def strong_params
     params.require(:deck).permit(:name, :user_id, :card_ids)
+  end
+
+  def create_cards
+    for temp in 0...params[:deck][:card_ids].size do
+      CardDeck.create(card_id: params[:deck][:card_ids][temp], deck_id: @deck.id )
+    end
   end
 
 end
