@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_225010) do
   create_table "card_decks", force: :cascade do |t|
     t.integer "card_id"
     t.integer "deck_id"
+    t.integer "copies"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_225010) do
     t.string "description"
     t.integer "mana_cost"
     t.integer "theme_set_id"
+    t.string "pic_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
