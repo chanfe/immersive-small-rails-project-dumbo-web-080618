@@ -36,7 +36,6 @@ class DecksController < ApplicationController
   end
 
   def update
-    # byebug
     @deck = Deck.find(params[:id])
     if @deck.update(strong_params)
       CardDeck.all.select{|e| e.deck_id == @deck.id}.each{|e| e.destroy}

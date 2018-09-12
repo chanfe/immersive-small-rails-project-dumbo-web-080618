@@ -32,13 +32,9 @@ class CardsController < ApplicationController
 
   def update
     get_card
-    @card = Card.update(strong_params)
-    if @card.save
-      redirect_to card_path(@card)
+    if @card.update(strong_params)
+      redirect_to @card
     else
-      get_card
-      get_theme_sets
-      get_decks
       render :edit
     end
   end

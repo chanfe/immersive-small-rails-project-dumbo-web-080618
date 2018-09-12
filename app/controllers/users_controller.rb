@@ -44,17 +44,6 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def play
-    current_user
-    render :play
-  end
-
-  def play_game
-    current_user
-    render :play_game
-  end
-
-
   private
 
   def strong_params

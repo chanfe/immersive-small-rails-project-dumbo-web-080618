@@ -8,6 +8,12 @@
   <%= f.label :mana_cost %>
   <%= f.number_field :mana_cost%><br>
 
+  <%= f.label :att %>
+  <%= f.number_field :att%><br>
+
+  <%= f.label :def %>
+  <%= f.number_field :def%><br>
+
   <%= f.label :theme_set_id, "Theme Set" %>
   <%= f.collection_select(:theme_set_id, ThemeSet.all, :id, :name, include_blank: true) %><br>
 

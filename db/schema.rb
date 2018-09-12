@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_225010) do
     t.string "description"
     t.integer "mana_cost"
     t.integer "theme_set_id"
-    t.string "pic_url"
+    t.string "pic"
     t.integer "att"
     t.integer "def"
     t.datetime "created_at", null: false
