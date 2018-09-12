@@ -4,7 +4,11 @@ class ThemeSetsController < ApplicationController
   end
 
   def new
-    @theme_set = ThemeSet.new
+    if current_user.id == 1
+      @theme_set = ThemeSet.new
+    else
+      redirect_to theme_sets_path
+    end
   end
 
   def create
@@ -19,11 +23,17 @@ class ThemeSetsController < ApplicationController
 
   def show
     find_theme_set
+    current_user
   end
 
   def edit
-    find_theme_set
+    if current_user.id == 1
+      find_theme_set
+    else
+      redirect_to theme_sets_path
+    end
   end
+
 
   def update
     find_theme_set

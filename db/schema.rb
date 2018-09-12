@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_09_10_225010) do
     t.integer "mana_cost"
     t.integer "theme_set_id"
     t.string "pic_url"
+    t.integer "att"
+    t.integer "def"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

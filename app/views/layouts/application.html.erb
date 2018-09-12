@@ -10,9 +10,12 @@
   </head>
 
   <body>
+    <%= link_to "user", users_path %>
+    <%= link_to "cards", cards_path %>
+    <%= link_to "decks", decks_path %>
+    <%= link_to "themes", theme_sets_path %>
     <% if logged_in? %>
       <%= button_to "Logout", "/logout", method: :delete  %>
-      <p>Welcome back!</p>
     <% else %>
       <%= link_to "Log in!", login_path %>
     <% end %>

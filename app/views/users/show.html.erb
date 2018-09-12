@@ -1,13 +1,15 @@
 <h1>User Info</h1>
 <%= render 'user' %>
-<%= link_to 'edit', edit_user_path%>
-<%= button_to 'delete', user_path, method: :delete %>
+<% if @user.id != 1%>
+  <%= link_to 'edit', edit_user_path%>
+  <%= button_to 'delete', user_path, method: :delete %>
 
-<h2>Deck List:</h2>
-<% @user.decks.each do |deck| %>
-<ul>
-  <li>
-    <%= link_to deck.name, deck %>
-  </li>
-</ul>
+  <h2>Deck List:</h2>
+  <% @user.decks.each do |deck| %>
+  <ul>
+    <li>
+      <%= link_to deck.name, deck %>
+    </li>
+  </ul>
+  <% end %>
 <% end %>

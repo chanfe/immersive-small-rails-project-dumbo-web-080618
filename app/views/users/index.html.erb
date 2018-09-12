@@ -1,5 +1,10 @@
-<h1>List of User</h1>
-<% @users.each do |user| %>
-  <%= link_to user.username, user %>
-  <br>
+<% if @user.id == 1 %>
+  <h1>List of User</h1>
+  <% @users.each do |user| %>
+    <%= link_to user.username, user %>
+    <br>
+  <% end %>
+<% else %>
+  <h1>Sorry you don't have access to all users</h1>
+  <%= link_to @user.username, @user  %>
 <% end %>

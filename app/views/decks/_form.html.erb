@@ -1,7 +1,7 @@
 <%= form_for @deck do |f| %>
   <%= f.label :user_id %>
   <% if logged_in? %>
-    <%= f.collection_select :user_id, [@currect_user], :id, :username%>
+    <%= f.collection_select :user_id, [@current_user], :id, :username%>
   <% else %>
     <%= f.collection_select :user_id, User.all, :id, :username %>
   <% end %>

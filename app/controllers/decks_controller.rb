@@ -1,7 +1,7 @@
 class DecksController < ApplicationController
   def index
-    if currect_user
-      @decks = currect_user.decks
+    if current_user
+      @decks = current_user.decks
     else
       @decks = Deck.all
     end
@@ -13,8 +13,8 @@ class DecksController < ApplicationController
 
   def new
     @deck = Deck.new
-    if currect_user
-      @currect_user = currect_user
+    if current_user
+      @current_user = current_user
     end
   end
 
@@ -30,8 +30,8 @@ class DecksController < ApplicationController
 
   def edit
     @deck = Deck.find(params[:id])
-    if currect_user
-      @currect_user = currect_user
+    if current_user
+      @current_user = current_user
     end
   end
 

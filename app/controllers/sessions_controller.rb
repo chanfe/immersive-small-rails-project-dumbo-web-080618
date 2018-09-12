@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
     # GET /login
     render :new
-  end 
+  end
 
   def create
     #POST /sessions
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params["username"])
     if @user && @user.authenticate(params["password"])
       # We're logged in
-      session[:currect_user_id] = @user.id
+      session[:current_user_id] = @user.id
       redirect_to decks_path
     else
       render :new
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :currect_user_id
+    session.delete :current_user_id
     redirect_to "/login"
   end
 end

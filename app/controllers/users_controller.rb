@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if current_user.id == 1
+      @users = User.all
+      render :index
+    else
+      redirect_to current_user
+    end
   end
 
   def show
@@ -38,6 +43,17 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
+
+  def play
+    current_user
+    render :play
+  end
+
+  def play_game
+    current_user
+    render :play_game
+  end
+
 
   private
 
