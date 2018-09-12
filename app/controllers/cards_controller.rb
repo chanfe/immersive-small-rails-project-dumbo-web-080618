@@ -9,6 +9,7 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
+    @title = "Create Card"
     get_theme_sets
     get_decks
 
@@ -20,11 +21,13 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to card_path(@card)
     else
+      @title = "Create Card"
       render :new
     end
   end
 
-  def edit
+  def edit 
+    @title = "Edit Card"
     get_card
     get_theme_sets
     get_decks
@@ -35,6 +38,10 @@ class CardsController < ApplicationController
     if @card.update(strong_params)
       redirect_to @card
     else
+      @title = "Edit Card"
+      get_card
+      get_theme_sets
+      get_decks
       render :edit
     end
   end

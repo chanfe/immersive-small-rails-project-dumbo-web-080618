@@ -1,4 +1,7 @@
-<%= form_for @deck do |f| %>
+<div class="form_stuff">
+<div>
+<h1 class="title_text"><%= @title %></h1>
+<%= form_for @deck, class: "mdl-form" do |f| %>
   <%= f.label :user_id %>
   <% if logged_in? %>
     <%= f.collection_select :user_id, [@current_user], :id, :username%>
@@ -17,5 +20,12 @@
     <%= number_field_tag "card_ids[#{card.id}]", card.card_decks.find_copies(card.id, @deck.id), in: 0..10 %>
     <br>
   <% end %>
- <%= f.submit %>
+ <%# f.submit %>
+ <!-- Accent-colored raised button with ripple -->
+
+<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  <%= @title.upcase %>
+</button>
 <% end %>
+</div>
+</div>

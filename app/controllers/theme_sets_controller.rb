@@ -6,6 +6,7 @@ class ThemeSetsController < ApplicationController
   def new
     if current_user.id == 1
       @theme_set = ThemeSet.new
+      @title = "New Theme-Set"
     else
       redirect_to theme_sets_path
     end
@@ -17,6 +18,7 @@ class ThemeSetsController < ApplicationController
     if @theme_set.save
       redirect_to theme_set_path(@theme_set)
     else
+      @title = "New Theme-Set"
       render :new
     end
   end
@@ -29,6 +31,7 @@ class ThemeSetsController < ApplicationController
   def edit
     if current_user.id == 1
       find_theme_set
+      @title = "Edit Theme-Set"
     else
       redirect_to theme_sets_path
     end
@@ -42,6 +45,7 @@ class ThemeSetsController < ApplicationController
     if @theme_set.save
       redirect_to @theme_set
     else
+      @title = "Edit Theme-Set"
       find_theme_set
       render :edit
     end
@@ -61,4 +65,5 @@ class ThemeSetsController < ApplicationController
   def find_theme_set
     @theme_set = ThemeSet.find(params[:id])
   end
+
 end

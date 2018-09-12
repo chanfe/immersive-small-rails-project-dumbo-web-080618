@@ -1,9 +1,13 @@
+<%= @title %></h1>
 <%= form_for @theme_set do |f| %>
   <%= f.label "Name: " %>
   <%= f.text_field :name %><br>
 
   <%= f.label "Category: " %>
   <%= f.text_field :category %>
-  <%= f.submit "Submit" %>
-
+  <%# f.submit "Submit" %>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  <%= @title.upcase %>
+  </button>
 <% end %>
+

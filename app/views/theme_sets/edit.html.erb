@@ -1,3 +1,9 @@
-<h1>Edit Theme: </h1><br>
+<div class="form_stuff">
+<div>
+<h1>
 <%= render 'form' %>
-<%= button_to "Delete", theme_set_path ,method: :delete %>
+
+<%= button_to "Delete", theme_set_path , {method: :delete, class: "mdl-button mdl-js-button mdl-button--raised warning-bg", data: {confirm: "Are you sure?"}} %>
+</div>
+
+</div>
