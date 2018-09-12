@@ -13,6 +13,7 @@ class DecksController < ApplicationController
 
   def new
     @deck = Deck.new
+    @title = "New Deck"
     if currect_user
       @currect_user = currect_user
     end
@@ -24,12 +25,14 @@ class DecksController < ApplicationController
       create_cards(@deck)
       redirect_to @deck
     else
+      @title = "New Deck"
       render :new
     end
   end
 
   def edit
     @deck = Deck.find(params[:id])
+    @title = "Edit Deck"
     if currect_user
       @currect_user = currect_user
     end

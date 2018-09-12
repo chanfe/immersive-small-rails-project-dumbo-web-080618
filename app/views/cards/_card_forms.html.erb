@@ -1,3 +1,5 @@
+<div class="form_stuff">
+<h1><%= @title %></h1>
 <%= form_for @card do |f| %>
   <%= f.label "Name"%>
   <%= f.text_field :name %><br>
@@ -11,5 +13,8 @@
   <%= f.label :theme_set_id, "Theme Set" %>
   <%= f.collection_select(:theme_set_id, ThemeSet.all, :id, :name, include_blank: true) %><br>
 
-  <%= f.submit "Submit" %>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  <%= @title.upcase %>
+</button>
 <% end %>
+</div>

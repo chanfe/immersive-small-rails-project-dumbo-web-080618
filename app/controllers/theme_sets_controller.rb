@@ -5,6 +5,7 @@ class ThemeSetsController < ApplicationController
 
   def new
     @theme_set = ThemeSet.new
+    @title = "New Theme-Set"
   end
 
   def create
@@ -13,6 +14,7 @@ class ThemeSetsController < ApplicationController
     if @theme_set.save
       redirect_to theme_set_path(@theme_set)
     else
+      @title = "New Theme-Set"
       render :new
     end
   end
@@ -23,6 +25,7 @@ class ThemeSetsController < ApplicationController
 
   def edit
     find_theme_set
+    @title = "Edit Theme-Set"
   end
 
   def update
@@ -32,6 +35,7 @@ class ThemeSetsController < ApplicationController
     if @theme_set.save
       redirect_to @theme_set
     else
+      @title = "Edit Theme-Set"
       find_theme_set
       render :edit
     end
@@ -51,4 +55,5 @@ class ThemeSetsController < ApplicationController
   def find_theme_set
     @theme_set = ThemeSet.find(params[:id])
   end
+
 end

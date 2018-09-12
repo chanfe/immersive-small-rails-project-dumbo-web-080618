@@ -13,3 +13,97 @@
  *= require_tree .
  *= require_self
  */
+ @import 'material.min.css';
+*{
+  margin: 0;
+  padding: 0px;
+}
+body {
+  width: 100%;
+  --accent-color: #4962FE;
+  --main-color: #b3d4fc;
+  --bg-color: #ccc;
+  --text-color: #2d4d4f;
+  --dark-color: #313738;
+  --error-text: #f4427a;
+  margin: auto;
+  background: var(--dark-color);
+}
+
+div {
+  margin: auto;
+}
+/* div.field_with_errors,
+div.field_with_errors label,
+div.field_with_errors input{
+  color: var(--error-text);
+  display: inline;
+} */
+
+div.form_stuff{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-top: 50px;
+  padding: 15px;
+  border-radius: 2%;
+  background: var(--bg-color);
+  box-shadow: #3a4142, 0, 5px, 5px, 0px;
+}
+div.form_stuff button {
+  float: right;
+}
+
+.warning-bg{
+  background: var(--error-text);
+  color: white;
+}
+
+button {
+  border-radius: 35%;
+}
+.mdl-layout-spacer {
+  background: var(--main-color);
+}
+
+div.form_stuff 
+input{
+  line-height: 10%;
+}
+
+.form_stuff input,
+.form_stuff select{
+  margin-bottom: 5px;
+}
+
+.form_stuff label {
+  color: var(--text-color);
+  font-size: 1.3em;
+}
+
+.form_stuff h1{
+  color: var(--accent-color);
+}
+div.nav_block {
+  background-color: var(--dark-color);
+  width: 100%;
+  height: 5vh;
+}
+nav  {
+  float: right;
+  padding-top: .5em;
+  padding-right: 30px;
+  display:block;
+}
+nav a {
+  padding-left: 20px;
+  color: var(--main-color);
+  text-decoration-line: none;
+}
+nav a:hover {
+  background: var(--dark-color);
+}
+
+nav div {
+  width: 30px;
+}

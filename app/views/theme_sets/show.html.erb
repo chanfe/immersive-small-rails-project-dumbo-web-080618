@@ -1,3 +1,6 @@
-<h1><%= @theme_set.name %></h1>
+<div clas="show_time">
+<h1 class="title_text"><%= @theme_set.name %></h1>
 <h2>A <%= @theme_set.category %>-Themed Set</h2>
-<h3><%= link_to 'Edit', edit_theme_set_path(@theme_set) %></h3>
+<%= button_to "Edit", edit_theme_set_path(@theme_set), {method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"} %>
+<!--h3><%= link_to 'Edit', edit_theme_set_path(@theme_set) %></h3-->
+<div>
