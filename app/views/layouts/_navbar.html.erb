@@ -1,9 +1,14 @@
+  <nav class="nav_block">
+    <nav class="nav_right">
+      <a class="link_style" href="">Login</a>
+      <a class="link_style" href="">Sign Up</a>
+      <a class="link_style" href="">Logout</a>
+    </nav>
 
-  <nav class="">
-    <a class="link_style" href="">Login</a>
-    <a class="link_style" href="">Sign Up</a>
-    <a class="link_style" href="">Logout</a>
-    
+    <nav class="nav_left">  
+      <%= link_to "User", users_path %>
+      <%= link_to "Cards", cards_path %>
+      <%= link_to "Decks", decks_path %>
+      <%= link_to "Themes", theme_sets_path %>
+    </nav>
   </nav>
-  <div class="nav_block">
-  </div>

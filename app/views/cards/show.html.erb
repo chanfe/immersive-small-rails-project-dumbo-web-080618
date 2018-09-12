@@ -7,6 +7,8 @@
 <% if @card.att != nil && @card.def != nil %>
   <h3>Att: <%= @card.att %> Def:<%= @card.def %></h3>
 <% end %>
+
+
 <%= image_tag @card.pic %>
 <% if current_user.id == 1 %>
   <%= link_to "Edit", edit_card_path %>
