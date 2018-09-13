@@ -46,6 +46,25 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def buy
+    random = rand(1..Card.all.size)
+    if found = Collection.find_by(card_id: random, user_id: current_user.id)
+      found.increment!(:amount, 1)
+    else
+      Collection.create(card_id: random, user_id: current_user.id, amount: 1)
+    end
+    redirect_to collections_path
+  end
+
+  def buy_this
+    if found = Collection.find_by(card_id: params[:card_id], user_id: current_user.id)
+      found.increment!(:amount, 1)
+    else
+      Collection.create(card_id: random, user_id: current_user.id, amount: 1)
+    end
+    redirect_to collections_path
+  end
+
   private
 
   def strong_params

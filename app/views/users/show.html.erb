@@ -1,5 +1,6 @@
 <h1>User Info</h1>
 <%= render 'user' %>
+<%= button_to 'buy', "/users/buy"%>
 <% if @user.id != 1%>
   <%= link_to 'edit', edit_user_path%>
   <%= button_to 'delete', user_path, method: :delete %>
