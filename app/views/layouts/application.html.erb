@@ -10,17 +10,20 @@
   </head>
 
   <body>
-    <%= link_to "user", users_path %>
-    <%= link_to "cards", cards_path %>
-    <%= link_to "decks", decks_path %>
-    <%= link_to "themes", theme_sets_path %>
-     <%= render 'layouts/navbar' %>
+    <div class="container">
 
-    <% if logged_in? %>
-      <%= button_to "Logout", "/logout", method: :delete  %>
-    <% else %>
-      <%= link_to "Log in!", login_path %>
-    <% end %>
-    <%= yield %>
+      <%= link_to "user", users_path %>
+      <%= link_to "cards", cards_path %>
+      <%= link_to "decks", decks_path %>
+      <%= link_to "themes", theme_sets_path %>
+       <%= render 'layouts/navbar' %>
+
+      <% if logged_in? %>
+        <%= button_to "Logout", "/logout", method: :delete  %>
+      <% else %>
+        <%= link_to "Log in!", login_path %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

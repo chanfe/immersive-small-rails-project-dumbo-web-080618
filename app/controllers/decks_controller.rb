@@ -33,8 +33,8 @@ class DecksController < ApplicationController
   def edit
     @deck = Deck.find(params[:id])
     @title = "Edit Deck"
-    if currect_user
-      @currect_user = currect_user
+    if current_user
+      @current_user = current_user
     end
   end
 

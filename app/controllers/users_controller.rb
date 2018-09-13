@@ -19,8 +19,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(strong_params)
     if @user.save
+      flash[:notice] = "Post successfully created"
       redirect_to @user
     else
+      flash[:notice] = "Post unsuccessfully created"
       render :new
     end
   end

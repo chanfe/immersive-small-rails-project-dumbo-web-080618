@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success" role="alert">
+    User Successfully created
+  </div>
+<% end %>
 <% if @user.id == 1 %>
   <h1>List of User</h1>
   <% @users.each do |user| %>

@@ -13,11 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
  @import 'material.min.css';
 *{
   margin: 0;
   padding: 0px;
 }
+  
 body {
   width: 100%;
   --accent-color: #4962FE;
@@ -29,6 +32,8 @@ body {
   margin: auto;
   background: var(--dark-color);
 }
+
+
 
 div {
   margin: auto;
@@ -66,7 +71,7 @@ button {
   background: var(--main-color);
 }
 
-div.form_stuff 
+div.form_stuff
 input{
   line-height: 10%;
 }
