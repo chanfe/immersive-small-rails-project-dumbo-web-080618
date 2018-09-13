@@ -35,6 +35,8 @@ class DecksController < ApplicationController
     @title = "Edit Deck"
     if current_user
       @current_user = current_user
+    else
+      redirect_to '/login'
     end
   end
 

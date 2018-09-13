@@ -1,14 +1,25 @@
   <nav class="nav_block">
     <nav class="nav_right">
-      <a class="link_style" href="">Login</a>
-      <a class="link_style" href="">Sign Up</a>
-      <a class="link_style" href="">Logout</a>
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path, method: :delete %>     
+    <% else %>
+      <a class="link_style" href="/login">Login</a>
+      <a class="link_style" href="/signup">Sign Up</a>
+    <% end %>
     </nav>
 
     <nav class="nav_left">  
-      <%= link_to "User", users_path %>
-      <%= link_to "Cards", cards_path %>
-      <%= link_to "Decks", decks_path %>
-      <%= link_to "Themes", theme_sets_path %>
+      <% if !request.fullpath.include?("users")%>
+      <%= link_to "User", users_path, class: "" %>
+      <% end %>
+      <% if !request.fullpath.include?("cards")%>
+      <%= link_to "Cards", cards_path, class: "" %>
+      <% end %>
+      <% if !request.fullpath.include?("decks")%>
+      <%= link_to "Decks", decks_path, class: "" %>
+      <% end %>
+      <% if !request.fullpath.include?("theme_sets")%>
+      <%= link_to "Themes", theme_sets_path, class: "" %>
+      <% end %>
     </nav>
   </nav>

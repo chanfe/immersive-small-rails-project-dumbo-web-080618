@@ -1,16 +1,19 @@
-<h1>Deck Info</h1>
-<%= @deck.name %>
-<br>
-<%= link_to 'edit', edit_deck_path%>
-<%= button_to 'delete', deck_path, method: :delete %>
+<div class="show_stuff mdl-styleguide-container mdl-layout mdl-layout__content">
+<h1 class="mdl-layout-title">Deck Info</h1>
+<h3 class="mdl-list__item-sub-title"><%= @deck.name.upcase %></h3>
 
+<% if logged_in? %>
+<%= render 'log_show' %>
+<% end %>
 
 <h2>Deck cards:</h2>
 
 <% @deck.cards.each do |card| %>
-<ul>
+<ul class="mdl-list">
   <% if @deck.card_decks.find_copies(card.id, @deck.id) > 0 %>
-    <li> <%= link_to card.name, card %> <%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</li>
+    <li class="mdl-list__item"> <%= link_to card.name, card %> <%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</li>
   <% end %>
 </ul>
 <% end %>
+</div>
+

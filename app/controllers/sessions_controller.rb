@@ -2,7 +2,11 @@ class SessionsController < ApplicationController
   # one routes for login in
   def new
     # GET /login
-    render :new
+    if current_user.nil?
+      render :new
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def create

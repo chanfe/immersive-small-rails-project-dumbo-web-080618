@@ -1,8 +1,20 @@
-<h1>List of Deck</h1>
-<% @decks.each do |deck| %>
-  <%= link_to deck.name, deck %>
-  <br>
+<div id="deck-list" class="mdl-styleguide styleguide-container form_stuff">
+<h1 class="mdl-styleguide-title">Deck List</h1>
+<a href="/decks/new"> 
+<% if logged_in?%>
+<button type="submit" class="mdl-button mdl-button--accent mdl-button--raised">Create New Deck </button></a>
 <% end %>
-<p>
-  <%= link_to "New deck", new_deck_path %>
-</p>
+
+
+  <div id="deck-listing">
+
+<ul class="mdl-list">
+<% @decks.each do |deck| %>
+
+  <li class="mdl-list__item"><%= link_to deck.name, deck %></li>
+  
+<% end %>
+</ul>
+
+</div>
+</div>

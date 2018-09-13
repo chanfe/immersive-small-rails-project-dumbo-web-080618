@@ -1,14 +1,17 @@
-<div clas="show_time">
-<h1 class="title_text"><%= @theme_set.name %></h1>
-<h2>A <%= @theme_set.category %>-Themed Set</h2>
-<% if @user.id == 1%>
+<div class="styleguide-container">
+
+
+<h1 class="styleguide-title"><%= @theme_set.name %></h1>
+<h2 class="styleguide-title">A <%= @theme_set.category %>-Themed Set</h2>
+<% if logged_in? && @user.id == 1%>
   <%= button_to "Edit", edit_theme_set_path(@theme_set), {method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"} %>
 <% end %>
 
-<div>
-
-<ul>
+<ul class="mdl-list">
   <% @theme_set.cards.each do |card| %>
-  <li><%= link_to card.name, card %></li>
+  <li class="mdl-list__item"><%= link_to card.name, card %></li>
   <% end %>
 </ul>
+
+</div>
+

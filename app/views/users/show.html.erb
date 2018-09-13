@@ -1,15 +1,22 @@
-<h1>User Info</h1>
-<%= render 'user' %>
+<br>
+<div class="mdl-card mdl-color--blue-grey-800 ">
+<div class="user-card mdl-card--expand">
+  <div class="mdl-card__title mdl-color-text--accent-contrast">
+  <h1 class="mdl-card__title-text title">User Info</h1>
+  <%= link_to 'My Decks', decks_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  %>
+  </div>
+  <div class=" mdl-color-text--white mdl-card__supporting-text ">
+  <%= render 'user' %>
+  </div>
+</div>
 <% if @user.id != 1%>
-  <%= link_to 'edit', edit_user_path%>
-  <%= button_to 'delete', user_path, method: :delete %>
+<div class="mdl-card__actions actions-horizontal"> 
+  <%= button_to 'edit', edit_user_path, {method: :get, class:"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"}%>
+  <%= button_to 'delete', user_path, {method: :delete, class:"warning-bg mdl-js-ripple-effect mdl-button"} %>
+</div>
+<div class="mdl-card--border"> 
 
-  <h2>Deck List:</h2>
-  <% @user.decks.each do |deck| %>
-  <ul>
-    <li>
-      <%= link_to deck.name, deck %>
-    </li>
-  </ul>
-  <% end %>
+</div>
+
 <% end %>
+</div>
