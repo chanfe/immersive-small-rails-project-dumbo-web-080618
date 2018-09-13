@@ -26,7 +26,7 @@ class CardsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @title = "Edit Card"
     get_card
     get_theme_sets

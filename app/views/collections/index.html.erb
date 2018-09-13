@@ -1,0 +1,7 @@
+<h1>List of Cards the user have</h1>
+<% Card.all.each do |card| %>
+  <% if @collection.find_by(card_id: card.id, user_id: @user.id) %>
+    <%= link_to card.name, card %>  <%= @collection.find_by(card_id: card.id, user_id: @user.id).amount%>
+  <% end %>
+  <br>
+<% end %>
