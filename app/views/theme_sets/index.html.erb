@@ -1,6 +1,10 @@
-<h1>Theme Sets</h1>
-<div>
+<div class="form_stuff">
+<h1 class="styleguide-title title">Theme Sets</h1>
+<% if logged_in? && current_user.id == 1 %>
+  <%= button_to 'Make New Theme', new_theme_set_path, class: "button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+<% end %>
+<div id="theme-sets">
   <% @theme_sets.each do |theme_set| %>
-     <h3><%= link_to theme_set.name, theme_set_path(theme_set) %></h3>
+     <h4><%= link_to theme_set.name, theme_set_path(theme_set) %></h4>
   <% end %>
 </div>

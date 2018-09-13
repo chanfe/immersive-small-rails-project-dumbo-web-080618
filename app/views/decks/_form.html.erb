@@ -1,6 +1,6 @@
 <div class="form_stuff">
 <div>
-<h1 class="title_text"><%= @title %></h1>
+<h1 class="title"><%= @title %></h1>
 <%= form_for @deck, class: "mdl-form" do |f| %>
   <%= f.label :user_id %>
   <% if logged_in? %>
@@ -14,14 +14,11 @@
   <%= f.text_field :name %>
   <br>
 
-  <!-- <% f.collection_check_boxes :card_ids, Card.all, :id, :name %> -->
   <% Card.all.each do |card| %>
     <%= label_tag "#{card.name}" %>
     <%= number_field_tag "card_ids[#{card.id}]", card.card_decks.find_copies(card.id, @deck.id), in: 0..10 %>
     <br>
   <% end %>
- <%# f.submit %>
- <!-- Accent-colored raised button with ripple -->
 
 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
   <%= @title.upcase %>

@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   def index
-    if current_user.id == 1
-      @users = User.all
-      render :index
+
+    if current_user.nil?
+      redirect_to '/'
     else
-      redirect_to current_user
+      if current_user.id == 1
+        @users = User.all
+        render :index
+      else
+        redirect_to current_user
+      end
     end
   end
 
@@ -14,6 +19,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @title = "Create Account"
   end
 
   def create
@@ -23,12 +29,14 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       flash[:notice] = "Post unsuccessfully created"
+      @title = "Create Account"
       render :new
     end
   end
 
   def edit
     @user = User.find(params[:id])
+    @title = "Edit Account"
   end
 
   def update
@@ -36,6 +44,7 @@ class UsersController < ApplicationController
     if @user.update(strong_params)
       redirect_to @user
     else
+      @title = "Edit Account"
       render :edit
     end
   end

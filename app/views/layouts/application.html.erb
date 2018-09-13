@@ -7,23 +7,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/app/assets/stylesheets/application.css" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,600,800" rel="stylesheet">
   </head>
 
   <body>
-    <div class="container">
+    <%= render 'layouts/navbar' %>
 
-      <%= link_to "user", users_path %>
-      <%= link_to "cards", cards_path %>
-      <%= link_to "decks", decks_path %>
-      <%= link_to "themes", theme_sets_path %>
-       <%= render 'layouts/navbar' %>
-
-      <% if logged_in? %>
-        <%= button_to "Logout", "/logout", method: :delete  %>
-      <% else %>
-        <%= link_to "Log in!", login_path %>
-      <% end %>
-      <%= yield %>
-    </div>
+    <%= yield%>
   </body>
 </html>
