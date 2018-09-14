@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_09_13_150330) do
     t.string "pic"
     t.integer "att"
     t.integer "def"
+    t.string "card_img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

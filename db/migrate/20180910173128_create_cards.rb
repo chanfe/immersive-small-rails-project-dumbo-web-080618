@@ -8,6 +8,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :pic
       t.integer :att
       t.integer :def
+      t.string :card_img
 
 
       t.timestamps
