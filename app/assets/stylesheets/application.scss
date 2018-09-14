@@ -50,6 +50,7 @@ div.show_stuff {
   display: flex;
   flex-direction: column;
   width: 65vw;
+  height: fit-content;
   max-width: 65vw;
   margin-top: 7vh;
   padding: 15px;
@@ -249,6 +250,13 @@ div.card-container {
   width: 164px;
   height: 242px;
 
+}
+.image-show {
+  transform: scale(.45);
+  margin: 0px;
+  padding: 0px;
+  height: fit-content;
+  width: fit-content;
 }
 
 .tinted {

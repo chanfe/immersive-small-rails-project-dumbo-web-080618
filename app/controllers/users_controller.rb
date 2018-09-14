@@ -60,17 +60,21 @@ class UsersController < ApplicationController
   def buy
     random = rand(1..Card.all.size)
     @thing = []
-    for i in 0..2
-      if found = Collection.find_by(card_id: random, user_id: current_user.id)
-        found.increment!(:amount, 1)
-      else
-        Collection.create(card_id: random, user_id: current_user.id, amount: 1)
+    if logged_in?
+      for i in 0..2
+        if found = Collection.find_by(card_id: random, user_id: current_user.id)
+          found.increment!(:amount, 1)
+        else
+          Collection.create(card_id: random, user_id: current_user.id, amount: 1)
+        end
+        @thing << random
+        random = rand(1..Card.all.size)
       end
-      @thing << random
-      random = rand(1..Card.all.size)
+      session[:thing] = @thing
+      redirect_to "/collections/thing"
+    else
+      redirect_to users_path
     end
-    session[:thing] = @thing
-    redirect_to "/collections/thing"
   end
 
   def buy_this
