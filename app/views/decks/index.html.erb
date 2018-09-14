@@ -1,8 +1,8 @@
-<div id="deck-list" class="mdl-styleguide styleguide-container form_stuff">
-<h1 class="mdl-styleguide-title">Deck List</h1>
-<a href="/decks/new"> 
+<div id="deck-list" class="mdl-styleguide styleguide-container show_stuff">
+<h1 class="styleguide-title">Deck List</h1>
+<hr>
 <% if logged_in?%>
-<button type="submit" class="mdl-button mdl-button--accent mdl-button--raised">Create New Deck </button></a>
+<%= button_to 'CREATE A DECK', new_deck_path, {method: :get, class: "mdl-button mdl-button--accent mdl-button--raised"}%>
 <% end %>
 
 
@@ -18,3 +18,5 @@
 
 </div>
 </div>
+
+
