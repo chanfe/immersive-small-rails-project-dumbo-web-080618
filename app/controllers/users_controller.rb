@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to @user
     else
-      flash[:notice] = "Post unsuccessfully created"
+      flash[:notice] = @user.errors.full_messages
       @title = "Create Account"
       render :new
     end
@@ -59,10 +59,12 @@ class UsersController < ApplicationController
 
   def buy
     random = rand(1..Card.all.size)
-    if found = Collection.find_by(card_id: random, user_id: current_user.id)
-      found.increment!(:amount, 1)
-    else
-      Collection.create(card_id: random, user_id: current_user.id, amount: 1)
+    for i in 0..2
+      if found = Collection.find_by(card_id: random, user_id: current_user.id)
+        found.increment!(:amount, 1)
+      else
+        Collection.create(card_id: random, user_id: current_user.id, amount: 1)
+      end
     end
     redirect_to collections_path
   end

@@ -11,6 +11,8 @@
     <div class="col-sm">
       <% if @collection.find_by(card_id: card.id, user_id: @user.id) %>
       <%= link_to image_tag(card.card_img, class:"image-jpg", data: {toggle:'tooltip', placement:'right'}, title:"You have #{@collection.find_by(card_id: card.id, user_id: @user.id).amount} copy of this cards" ), card %>
+      <% else %>
+      <%= link_to image_tag(card.card_img, class:"image-jpg tinted", data: {toggle:'tooltip', placement:'right'}, title:"You have no copy of this cards" ), card %>
       <% end %>
     </div>
     <% counter += 1  %>

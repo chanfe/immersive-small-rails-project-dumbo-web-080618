@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to decks_path
     else
+      flash[:notice] = ["Login in failed","No user or password"]
       render :new
       # redirect_to "/login"
     end

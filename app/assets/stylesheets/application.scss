@@ -180,7 +180,7 @@ div.card-container {
 .card-custom
 { margin-top: 5vh;
   .mdl-card {
-    
+
   }
   border-radius: 20px;
   width: 300px;
@@ -227,5 +227,9 @@ div.card-container {
   min-width: 164px;
   width: 164px;
   height: 242px;
-  
+
+}
+
+.tinted {
+  -webkit-filter: grayscale(100%);
 }

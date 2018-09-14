@@ -6,7 +6,6 @@
   <div class="mdl-card__supporting-text ">
   <%= render 'user' %>
   </div>
-<%= button_to 'buy random card', "/users/buy",{method: :post, class:"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"}%>
 
 <% if @user.id != 1%>
 <div class="mdl-card__actions actions-horizontal">
