@@ -1,4 +1,4 @@
 <div id="log-show">
-<%= button_to 'Edit Deck', edit_deck_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+<%= button_to 'Edit Deck', edit_deck_path, {method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"}%>
 <%= button_to 'Delete', deck_path, {method: :delete, class:"warning-bg mdl-js-ripple-effect mdl-button"} %>
 </div>
