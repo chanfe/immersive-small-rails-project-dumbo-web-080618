@@ -1,8 +1,11 @@
 class CollectionsController < ApplicationController
 
   def index
-    current_user
-    @collection = Collection.all
+    if current_user.nil?
+      redirect_to '/'
+    else
+      current_user
+      @collection = Collection.all
+    end
   end
-
 end

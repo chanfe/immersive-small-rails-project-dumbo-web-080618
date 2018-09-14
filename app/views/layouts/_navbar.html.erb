@@ -1,7 +1,7 @@
   <nav class="nav_block">
     <nav class="nav_right">
     <% if logged_in? %>
-      <%= link_to 'Logout', logout_path, method: :delete %>     
+      <%= link_to 'Logout', logout_path, method: :delete %>
     <% else %>
 
       <a class="link_style" href="/login">Login</a>
@@ -9,8 +9,9 @@
     <% end %>
     </nav>
 
-    <nav class="nav_left">  
+    <nav class="nav_left">
       <%= link_to "User", users_path, class: "" %>
+      <%= link_to "Collection", collections_path, class: "" %>
       <%= link_to "Cards", cards_path, class: "" %>
       <%= link_to "Decks", decks_path, class: "" %>
       <%= link_to "Themes", theme_sets_path, class: "" %>
