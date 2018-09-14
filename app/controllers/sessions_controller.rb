@@ -24,7 +24,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :current_user_id
+    # session.delete :current_user_id
+    session.clear
     redirect_to "/login"
   end
 end

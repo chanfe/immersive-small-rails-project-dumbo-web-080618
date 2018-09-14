@@ -3,26 +3,17 @@
     <% if logged_in? %>
       <%= link_to 'Logout', logout_path, method: :delete %>
     <% else %>
+
       <a class="link_style" href="/login">Login</a>
       <a class="link_style" href="/signup">Sign Up</a>
     <% end %>
     </nav>
 
     <nav class="nav_left">
-      <% if !request.fullpath.include?("users")%>
       <%= link_to "User", users_path, class: "" %>
-      <% end %>
-      <% if !request.fullpath.include?("collections")%>
       <%= link_to "Collection", collections_path, class: "" %>
-      <% end %>
-      <% if !request.fullpath.include?("cards")%>
       <%= link_to "Cards", cards_path, class: "" %>
-      <% end %>
-      <% if !request.fullpath.include?("decks")%>
       <%= link_to "Decks", decks_path, class: "" %>
-      <% end %>
-      <% if !request.fullpath.include?("theme_sets")%>
       <%= link_to "Themes", theme_sets_path, class: "" %>
-      <% end %>
     </nav>
   </nav>

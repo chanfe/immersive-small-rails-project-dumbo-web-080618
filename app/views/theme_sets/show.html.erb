@@ -1,4 +1,4 @@
-<div class="styleguide-container">
+<div class="styleguide-container show_stuff">
 
 
 <h1 class="styleguide-title"><%= @theme_set.name %></h1>
@@ -9,9 +9,8 @@
 
 <ul class="mdl-list">
   <% @theme_set.cards.each do |card| %>
-  <li class="mdl-list__item"><%= link_to card.name, card %></li>
+  <li class="mdl-list__item"><%= link_to image_tag(card.card_img, class:"image-jpg"), card %></li>
   <% end %>
 </ul>
 
 </div>
-

@@ -11,9 +11,8 @@
 <% @deck.cards.each do |card| %>
 <ul class="mdl-list">
   <% if @deck.card_decks.find_copies(card.id, @deck.id) > 0 %>
-    <li class="mdl-list__item"> <%= link_to card.name, card %> <%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</li>
+    <li class="mdl-list__item"> <%= link_to image_tag(card.card_img, class:"image-jpg"), card %> <%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</li>
   <% end %>
 </ul>
 <% end %>
 </div>
-
