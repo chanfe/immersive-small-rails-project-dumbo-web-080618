@@ -26,6 +26,7 @@
   <hr class="card-hr">
   <div class="card-pic">
     <div class="img" 
+  <div>
      style="background-image: url(<%= image_path(@card.pic) %>)">
     </div>
   </div>
@@ -44,7 +45,6 @@
 <div class="show_stuff">
   <h1 class="styleguide-title">Your Card:</h1>
   <hr>
-  <div>
-  <%= link_to image_tag(@card.card_img, class:"image-show"), @card %>
-  </div>
+  <div class="show-image-fix">
+  <%= link_to image_tag(@card.card_img, class:""), @card , class: "image-show "%></div>
 </div>

@@ -19,7 +19,7 @@
 
 
 *{
-  margin: 0;
+  margin: 0 auto 0;
   padding: 0px;
   min-width: fit-content;
   font-family: 'Montserrat', sans-serif;
@@ -50,7 +50,7 @@ div.show_stuff {
   display: flex;
   flex-direction: column;
   width: 65vw;
-  height: fit-content;
+  min-height: fit-content;
   max-width: 65vw;
   margin-top: 7vh;
   padding: 15px;
@@ -61,6 +61,11 @@ div.show_stuff {
   *.styleguide-title {
     color: var (var(--dark-color));
   }
+
+  // a {
+  //   margin: 0 auto 0;
+  //   padding: 0px;
+  // }
 }
 
 div.form_stuff {
@@ -253,10 +258,16 @@ div.card-container {
 }
 .image-show {
   transform: scale(.45);
-  margin: 0px;
-  padding: 0px;
-  height: fit-content;
-  width: fit-content;
+ 
+  // height: fit-content;
+  // width: fit-content;
+}
+
+.show-image-fix {
+  position: relative;
+  bottom: 40vh;
+  margin: 20px auto 0;
+  transform: scale(.45);
 }
 
 .tinted {
