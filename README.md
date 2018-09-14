@@ -33,7 +33,7 @@ We use [Github](http://github.com/) for versioning. For the versions available, 
 * **Kevin Steele** - *Initial work* - [Anubis523](https://github.com/Anubis523)
 * **Felix Chan** - *Initial work* - [chanfe](https://github.com/chanfe)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/chanfe/immersive-small-rails-project-dumbo-web-080618/contributors) who participated in this project.
 
 ## License
 
