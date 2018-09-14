@@ -7,7 +7,8 @@
   <%= button_to "Edit", edit_theme_set_path(@theme_set), {method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"} %>
 <% end %>
 
-<ul class="mdl-list">
+<ul class="mdl-list ">
+
   <% @theme_set.cards.each do |card| %>
   <li class="mdl-list__item"><%= link_to image_tag(card.card_img, class:"image-jpg"), card %></li>
   <% end %>
