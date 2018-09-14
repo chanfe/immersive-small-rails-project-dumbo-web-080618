@@ -6,6 +6,13 @@ class CollectionsController < ApplicationController
     else
       current_user
       @collection = Collection.all
+      render :index
     end
   end
+
+  def thing
+    @thing = session[:thing]
+    render :thing
+  end
+
 end
