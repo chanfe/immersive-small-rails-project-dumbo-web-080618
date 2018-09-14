@@ -1,10 +1,18 @@
 <h1>List of Cards the user have</h1>
+<% counter = 0 %>
 <div class="row">
   <% Card.all.each do |card| %>
+
+    <% if counter == 4 %>
+      </div><div class="row">
+      <% counter = 0 %>
+    <% end %>
+
     <div class="col-sm">
       <% if @collection.find_by(card_id: card.id, user_id: @user.id) %>
-      <%= link_to image_tag(card.card_img, class:"image-jpg", data: {toggle:'tooltip', placement:'right'}, title:"You have #{@collection.find_by(card_id: card.id, user_id: @user.id).amount} card(s)" ), card %>
+      <%= link_to image_tag(card.card_img, class:"image-jpg", data: {toggle:'tooltip', placement:'right'}, title:"You have #{@collection.find_by(card_id: card.id, user_id: @user.id).amount} copy of this cards" ), card %>
       <% end %>
     </div>
+    <% counter += 1  %>
   <% end %>
 </div>

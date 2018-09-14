@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(strong_params)
     if @user.save
       flash[:notice] = "Post successfully created"
+      session[:current_user_id] = @user.id
       redirect_to @user
     else
       flash[:notice] = "Post unsuccessfully created"
@@ -52,6 +53,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.delete
+    session.clear
     redirect_to users_path
   end
 
@@ -77,6 +79,6 @@ class UsersController < ApplicationController
   private
 
   def strong_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
   end
 end
