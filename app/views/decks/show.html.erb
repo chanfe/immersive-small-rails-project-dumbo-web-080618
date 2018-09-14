@@ -1,18 +1,23 @@
-<div class="show_stuff mdl-styleguide-container mdl-layout mdl-layout__content">
-<h1 class="mdl-layout-title">Deck Info</h1>
-<h3 class="mdl-list__item-sub-title"><%= @deck.name.upcase %></h3>
+<div class="show_stuff mdl-styleguide-container">
+<h1 class="styleguide-title">Deck Info</h1>
+<h2 class="styleguide-title"><%= @deck.name.upcase %></h2>
 
 <% if logged_in? %>
 <%= render 'log_show' %>
 <% end %>
 
-<h2>Deck cards:</h2>
-
+<h3>Deck cards:</h3>
+<hr>
+<ul class="mdl-list theme-card-listing">
 <% @deck.cards.each do |card| %>
-<ul class="mdl-list">
   <% if @deck.card_decks.find_copies(card.id, @deck.id) > 0 %>
-    <li class="mdl-list__item"> <%= link_to image_tag(card.card_img, class:"image-jpg"), card %> <%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</li>
+  <li class="mdl-list__item">
+    <div>
+    <%= link_to image_tag(card.card_img, class:"image-jpg"), card %> <br><p><%= @deck.card_decks.find_copies(card.id, @deck.id) %> copies</p>
+    </div>
+  </li>
   <% end %>
-</ul>
+  </ul>
 <% end %>
+</div>
 </div>

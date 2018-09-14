@@ -1,14 +1,14 @@
-<div class="styleguide-container show_stuff">
+<div class="mdl-styleguide-container show_stuff">
 
 
 <h1 class="styleguide-title"><%= @theme_set.name %></h1>
 <h2 class="styleguide-title">A <%= @theme_set.category %>-Themed Set</h2>
+<hr>
 <% if logged_in? && @user.id == 1%>
   <%= button_to "Edit", edit_theme_set_path(@theme_set), {method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"} %>
 <% end %>
 
-<ul class="mdl-list ">
-
+<ul class="mdl-list theme-card-listing">
   <% @theme_set.cards.each do |card| %>
   <li class="mdl-list__item"><%= link_to image_tag(card.card_img, class:"image-jpg"), card %></li>
   <% end %>
