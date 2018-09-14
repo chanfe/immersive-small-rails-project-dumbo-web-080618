@@ -37,7 +37,7 @@
 </div>
 <div class="card-buy">
 <% if logged_in?%>
-  <%= button_to "buy", "/cards/#{@card.id}/buy_this", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
+  <%= button_to "buy", "/cards/#{@card.id}/buy_this", {method: :post,class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"}%>
 <% end %>
 </div>
 </div>
