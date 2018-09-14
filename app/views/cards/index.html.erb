@@ -1,8 +1,10 @@
 
-<div class="styleguide-container mdl-layout form_stuff">
-  <h1 class="styleguide-title title">Cards Index</h1>
+<div class="styleguide-container mdl-layout show_stuff">
+  <h1 class="styleguide-title">Cards Index</h1>
+  <hr>
+  <ul class="mdl-list">
   <% @cards.each do |card| %>
-    <h3><%= link_to card.name , card_path(card) %></h3>
+    <li class="mdl-list__item"><%= link_to card.name , card_path(card) %></li>
   <% end %>
-  
+  </ul>
 </div>

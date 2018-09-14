@@ -1,4 +1,4 @@
-<h2>Name: <%= @card.name %></h2>
+<!--<h2>Name: <%= @card.name %></h2>
 <h2>Mana Cost: <%= @card.mana_cost %></h2>
 <h2>From the <%= link_to @card.theme_set.name, @card.theme_set %> Theme-Set</h2>
 <h2>Description: </h2>
@@ -15,4 +15,29 @@
 <% end %>
 <% if logged_in?%>
   <%= button_to "buy", "/cards/#{@card.id}/buy_this"%>
+<% end %>-->
+<!--Card stuff-->
+<div class="card-container">
+<div class="card-custom mdl-card mdl-shadow--3dp">
+  <div class="mdl-card__title">
+    <p class="mdl-card__supporting-text card-title"><%= @card.name.upcase %></p>
+    <p class="mdl-card__supporting-text card-title">Mana Cost: <%= @card.mana_cost %></p>
+  </div>
+  <hr class="card-hr">
+  <div class="card-pic">
+    <div class="img" 
+     style="background-image: url(<%= image_path(@card.pic) %>)">
+    </div>
+  </div>
+  <div class="mdl-card__supporting-text">
+  <p><b><em>Description:</em></b><br>
+  <%= @card.description %>
+</p>
+  </div>
+</div>
+<div class="card-buy">
+<% if logged_in?%>
+  <%= button_to "buy", "/cards/#{@card.id}/buy_this", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"%>
 <% end %>
+</div>
+</div>
