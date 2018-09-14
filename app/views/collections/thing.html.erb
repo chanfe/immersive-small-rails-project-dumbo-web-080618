@@ -1,0 +1,10 @@
+<h1>You have brought these three cards:</h1>
+<div class="row">
+  <% @thing.each do |card_id| %>
+    <div class="col-sm">
+      <%= link_to image_tag(Card.find_by(id: card_id).card_img, class:"image-jpg" ), Card.find_by(id: card_id) %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Collection", collections_path, class: "" %>
